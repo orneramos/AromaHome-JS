@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "tipo": "Difusor",
+    "linea": "classic",
+    "fragancia": "Liberty Bell",
+    "precio": 800,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-classic.jpg"
+  },
+  {
+    "id": 2,
+    "tipo": "Difusor",
+    "linea": "classic",
+    "fragancia": "Coco & Vainilla",
+    "precio": 800,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-classic.jpg"
+  },
+  {
+    "id": 3,
+    "tipo": "Difusor",
+    "linea": "classic",
+    "fragancia": "Pitanga",
+    "precio": 800,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-classic.jpg"
+  },
+  {
+    "id": 4,
+    "tipo": "Difusor",
+    "linea": "terra",
+    "fragancia": "Terra",
+    "precio": 850,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-terra.jpg"
+  },
+  {
+    "id": 5,
+    "tipo": "Difusor",
+    "linea": "terra",
+    "fragancia": "Jazmin & azahares",
+    "precio": 850,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-terra.jpg"
+  },
+  {
+    "id": 6,
+    "tipo": "Difusor",
+    "linea": "terra",
+    "fragancia": "Sandalo dulce",
+    "precio": 850,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/difusor-terra.jpg"
+  },
+  {
+    "id": 7,
+    "tipo": "Aromatizante",
+    "linea": "classic",
+    "fragancia": "Liberty Bell",
+    "precio": 700,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/aromatizante-classic.jpg"
+  },
+  {
+    "id": 8,
+    "tipo": "Aromatizante",
+    "linea": "classic",
+    "fragancia": "Pitanga",
+    "precio": 700,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/aromatizante-classic.jpg"
+  },
+  {
+    "id": 9,
+    "tipo": "Aromatizante",
+    "linea": "terra",
+    "fragancia": "Terra",
+    "precio": 850,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/aromatizante-terra.jpg"
+  },
+  {
+    "id": 10,
+    "tipo": "Aromatizante",
+    "linea": "terra",
+    "fragancia": "Sandalo Dulce",
+    "precio": 850,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/aromatizante-terra.jpg"
+  },
+  {
+    "id": 11,
+    "tipo": "Jabón",
+    "linea": "classic",
+    "fragancia": "Clasico",
+    "precio": 500,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/jabon.jpg"
+  },
+  {
+    "id": 12,
+    "tipo": "Jabón",
+    "linea": "classic",
+    "fragancia": "Manzana verde",
+    "precio": 500,
+    "stock": 10,
+    "cantidad": 1,
+    "url": "img/jabon.jpg"
+  }
+]

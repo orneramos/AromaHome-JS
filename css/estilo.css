@@ -1,0 +1,92 @@
+body {
+    font-family: 'Dosis', sans-serif
+}
+
+.productos-container {
+      display: flex;
+      flex-flow: row wrap; 
+}
+
+.producto-item {
+    margin: 2rem;
+}
+
+.btn-light:hover {
+    background-color: rgb(238, 236, 236);
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "cantidad precio btn-eliminar";
+}
+
+.cantidad {
+    grid-area: "cantidad";
+    justify-self: center
+}
+
+.precio {
+    grid-area: "precio";
+    justify-self: center
+}
+
+.btn-eliminar {
+    grid-area: "btn-eliminar";
+    justify-self: center
+}
+
+#precioTotal {
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.portada {
+    display: grid;
+    grid-template-areas: "logo" "descripcion";
+    background-image: url("../img/portada.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    margin-bottom: 5rem; 
+}
+
+.portada-logo {
+    width: 300px;
+    text-align: center;
+    margin: 13rem auto 0 auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255);
+    border-radius: 5px;
+    height: max-content;
+    grid-area: "logo";
+}
+
+.cursiva {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    margin: 1rem;
+    line-height: 2rem; }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.descripcion {
+    display: none;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255);
+    border-radius: 5px;
+    height: max-content; 
+    grid-area: "descripcion";
+}
