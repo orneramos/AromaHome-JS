@@ -44,6 +44,7 @@ checkLocalStorage()
 
 function checkLocalStorage() {
     if (localStorage.getItem('productos')) {
+        console.log(localStorage.getItem('productos').length)
         carritoDeCompras = JSON.parse(localStorage.getItem('productos'))
         //agregar html del carrito de los productos que estaban en el localStorage
         carritoDeCompras.forEach(productoAgregar => {
