@@ -4,7 +4,7 @@ let total = JSON.parse(localStorage.getItem('total'))
 
 $(() => {
     //mostrar productos a comprar y total
-    if(localStorage.getItem('productos')) {
+    if (localStorage.getItem('productos')) {
         $("#spanContadorCarrito").text(`${contadorCarrito}`)
         carritoDeCompras.forEach(producto => {
             $("#listaProductos").append(
@@ -28,6 +28,8 @@ $(() => {
         )
     } else {
         $("#spanContadorCarrito").text(0)
+        $("#contenedorForm").remove()
+        $("h4").remove()
     }
 
     // formulario datos de envio y compra
@@ -39,7 +41,7 @@ $(() => {
     $("#btn-finalizarCompra").on('click', () => {
         $.post("https://jsonplaceholder.typicode.com/posts", JSON.stringify(carritoDeCompras), function(data, estado) {
             console.log(data, estado)
-            if(estado){
+            if (estado) {
                $("#mensajeConfirmacionCompra").append("<h5>Su compra se ha ejecutado correctamente, a la brevedad prepararemos su pedido para ser enviado</h5>") 
                $("#contenedorForm").fadeOut()
                localStorage.clear()

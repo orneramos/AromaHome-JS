@@ -44,7 +44,6 @@ checkLocalStorage()
 
 function checkLocalStorage() {
     if (localStorage.getItem('productos')) {
-        console.log(localStorage.getItem('productos').length)
         carritoDeCompras = JSON.parse(localStorage.getItem('productos'))
         //agregar html del carrito de los productos que estaban en el localStorage
         carritoDeCompras.forEach(productoAgregar => {
@@ -95,6 +94,7 @@ function checkLocalStorage() {
     } else {
         carritoDeCompras = []
     }
+    habilitarCompra()
 }
 
 //agregar productos al carrito teniendo en cuenta si ya estaban. si es asi, unicamente sumar cantidad sino agregar todo el producto
@@ -157,9 +157,11 @@ function agregarAlCarrito(id) {
             document.querySelector(`.productoEnCarrito${productoAgregar.id}`).remove()
             carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id)    
             actualizarCarrito()
+            habilitarCompra()
         })
     }
     actualizarCarrito()
+    habilitarCompra()
 }
 
 //actualizar cantidad de unidades en el carrito, precio total y actualizar localStorage
@@ -171,6 +173,11 @@ function actualizarCarrito() {
     localStorage.setItem('total', JSON.stringify(precioTotal.innerHTML))
 } 
 
-
-
-    
+//habilitar o desabilitar la opcion de comprar (btn-compra del carrito) segun si hay productos o no en el carrito
+function habilitarCompra() {
+    if (carritoDeCompras.length == 0) {
+        document.getElementById("btn-comprar").disabled = true
+    } else {
+        document.getElementById("btn-comprar").disabled = false
+    }
+}
