@@ -94,7 +94,3 @@ a:hover {
     height: max-content; 
     grid-area: "descripcion";
 }
-
-.sinStock {
-    color: red;
-}
