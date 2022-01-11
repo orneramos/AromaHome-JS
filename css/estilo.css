@@ -35,6 +35,10 @@ body {
     justify-self: center
 }
 
+.btn-cantidad {
+    max-height: 40px;
+}
+
 #precioTotal {
     justify-content: center;
 }
@@ -81,7 +85,7 @@ a:hover {
 
 .descripcion {
     display: none;
-    width: 300px;
+    width: 400px;
     text-align: center;
     margin: 0 auto;
     padding: 1rem;
@@ -89,4 +93,8 @@ a:hover {
     border-radius: 5px;
     height: max-content; 
     grid-area: "descripcion";
+}
+
+.sinStock {
+    color: red;
 }

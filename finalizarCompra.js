@@ -40,7 +40,6 @@ $(() => {
     //POST
     $("#btn-finalizarCompra").on('click', () => {
         $.post("https://jsonplaceholder.typicode.com/posts", JSON.stringify(carritoDeCompras), function(data, estado) {
-            console.log(data, estado)
             if (estado) {
                $("#mensajeConfirmacionCompra").append("<h5>Su compra se ha ejecutado correctamente, a la brevedad prepararemos su pedido para ser enviado</h5>") 
                $("#contenedorForm").fadeOut()

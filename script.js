@@ -20,7 +20,7 @@ function mostrarProductos(array){
         let div = document.createElement("div")
         div.classList.add("producto-item")
         div.innerHTML += `
-        <div class="card m-5" style="width: 18rem;">
+        <div class="card m-5" style="width: 18rem;" id=card${producto.id}>
             <img src="${producto.url}" class="card-img-top" alt="imagen${producto.tipo}">
             <div class="card-body">
                 <h5 class="card-title">${producto.tipo}</h5>
@@ -53,9 +53,9 @@ function checkLocalStorage() {
                 <h5>${productoAgregar.tipo} ${productoAgregar.fragancia}</h5>
                 <div class="grid">
                     <div class="cantidad d-flex">
-                        <button class="btn btn-light" id="btnRestar${productoAgregar.id}">-</button>
+                        <button class="btn btn-light btn-cantidad" id="btnRestar${productoAgregar.id}">-</button>
                         <p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>
-                        <button class="btn btn-light" id="btnSumar${productoAgregar.id}">+</button>
+                        <button class="btn btn-light btn-cantidad" id="btnSumar${productoAgregar.id}">+</button>
                     </div>
                     <p class="precio">$${productoAgregar.precio}</p>
                     <button id="btnEliminar${productoAgregar.id}" class="btn btn-light btn-eliminar"><i class="fas fa-trash-alt"></i></button>
@@ -107,7 +107,7 @@ function agregarAlCarrito(id) {
             document.getElementById(`cantidad${productoEnCarrito.id}`).innerHTML = 
             `<p id="cantidad${productoEnCarrito.id}">Cantidad: ${productoEnCarrito.cantidad}</p>`
         } else {
-            alert("No queda stock del producto elegido")
+            alert("Producto sin stock")
         } 
     } else {
         let productoAgregar = productosEnStock.find(producto => producto.id == id)
@@ -119,9 +119,9 @@ function agregarAlCarrito(id) {
             <h5>${productoAgregar.tipo} ${productoAgregar.fragancia}</h5>
             <div class="grid">
                 <div class="cantidad d-flex">
-                    <button class="btn btn-light" id="btnRestar${productoAgregar.id}">-</button>
+                    <button class="btn btn-light btn-cantidad" id="btnRestar${productoAgregar.id}">-</button>
                     <p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>
-                    <button class="btn btn-light" id="btnSumar${productoAgregar.id}">+</button>
+                    <button class="btn btn-light btn-cantidad" id="btnSumar${productoAgregar.id}">+</button>
                 </div>
                 <p class="precio">$${productoAgregar.precio}</p>
                 <button id="btnEliminar${productoAgregar.id}" class="btn btn-light btn-eliminar"><i class="fas fa-trash-alt"></i></button>
@@ -130,11 +130,9 @@ function agregarAlCarrito(id) {
         divCarritoDeCompras.appendChild(div)
         //restar cantidad
         let btnRestar = document.getElementById(`btnRestar${productoAgregar.id}`)
-        console.log(btnRestar)
         btnRestar.addEventListener('click', () => {
             if (productoAgregar.cantidad > 1) {
                 productoAgregar.cantidad -= 1
-                console.log(productoAgregar.cantidad)
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
@@ -145,7 +143,6 @@ function agregarAlCarrito(id) {
         btnSumar.addEventListener('click', () => {
             if (productoAgregar.cantidad < productoAgregar.stock) {
                 productoAgregar.cantidad += 1
-                console.log(productoAgregar.cantidad)
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
