@@ -32,7 +32,8 @@ body {
 
 .btn-eliminar {
     grid-area: "btn-eliminar";
-    justify-self: center
+    justify-self: center;
+    max-height: 40px;
 }
 
 .btn-cantidad {
