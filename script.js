@@ -21,7 +21,7 @@ function mostrarProductos(array){
         div.classList.add("producto-item")
         div.innerHTML += `
         <div class="card m-5" style="width: 18rem;" id=card${producto.id}>
-            <img src="${producto.url}" class="card-img-top" alt="imagen${producto.tipo}">
+            <img src="img/${producto.url}" class="card-img-top" alt="imagen${producto.tipo}">
             <div class="card-body">
                 <h5 class="card-title">${producto.tipo}</h5>
                 <p>${producto.fragancia}</p>

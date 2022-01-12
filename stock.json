@@ -7,7 +7,7 @@
     "precio": 800,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-classic.jpg"
+    "url": "difusor-classic.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "precio": 800,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-classic.jpg"
+    "url": "difusor-classic.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "precio": 800,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-classic.jpg"
+    "url": "difusor-classic.jpg"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "precio": 850,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-terra.jpg"
+    "url": "difusor-terra.jpg"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "precio": 850,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-terra.jpg"
+    "url": "difusor-terra.jpg"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "precio": 850,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/difusor-terra.jpg"
+    "url": "difusor-terra.jpg"
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "precio": 700,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/aromatizante-classic.jpg"
+    "url": "aromatizante-classic.jpg"
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "precio": 700,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/aromatizante-classic.jpg"
+    "url": "aromatizante-classic.jpg"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "precio": 850,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/aromatizante-terra.jpg"
+    "url": "aromatizante-terra.jpg"
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "precio": 850,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/aromatizante-terra.jpg"
+    "url": "aromatizante-terra.jpg"
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "precio": 500,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/jabon.jpg"
+    "url": "jabon.jpg"
   },
   {
     "id": 12,
@@ -117,6 +117,6 @@
     "precio": 500,
     "stock": 10,
     "cantidad": 1,
-    "url": "img/jabon.jpg"
+    "url": "jabon.jpg"
   }
 ]
