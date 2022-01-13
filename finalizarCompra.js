@@ -34,16 +34,16 @@ $(() => {
 
     // formulario datos de envio y compra
     $("#formularioCompra").submit((e) => {
-        e.preventDefault()
+        e.preventDefault() 
+        
     })
-    
     //POST
     $("#btn-finalizarCompra").on('click', () => {
         $.post("https://jsonplaceholder.typicode.com/posts", JSON.stringify(carritoDeCompras), function(data, estado) {
             if (estado) {
-               $("#mensajeConfirmacionCompra").append("<h5>Su compra se ha ejecutado correctamente, a la brevedad prepararemos su pedido para ser enviado</h5>") 
-               $("#contenedorForm").fadeOut()
-               localStorage.clear()
+            $("#mensajeConfirmacionCompra").append("<h5>Su compra se ha ejecutado correctamente, a la brevedad prepararemos su pedido para ser enviado</h5>") 
+            $("#contenedorForm").fadeOut()
+            localStorage.clear()
             }
         })
     })

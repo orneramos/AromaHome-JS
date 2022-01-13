@@ -106,8 +106,21 @@ function agregarAlCarrito(id) {
             productoEnCarrito.cantidad = productoEnCarrito.cantidad + 1
             document.getElementById(`cantidad${productoEnCarrito.id}`).innerHTML = 
             `<p id="cantidad${productoEnCarrito.id}">Cantidad: ${productoEnCarrito.cantidad}</p>`
+            Toastify({
+                text: "Producto agregado al carrito",
+                duration: 2000,
+                style: {
+                    background: "linear-gradient(to right, #89A61F, #458549)",
+                }
+                }).showToast();
         } else {
-            alert("Producto sin stock")
+            Toastify({
+                text: "Producto sin stock",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #FCA014, #F2B013)",
+                  }
+                }).showToast();
         } 
     } else {
         let productoAgregar = productosEnStock.find(producto => producto.id == id)
@@ -128,6 +141,13 @@ function agregarAlCarrito(id) {
             </div>
         ` 
         divCarritoDeCompras.appendChild(div)
+        Toastify({
+            text: "Producto agregado al carrito",
+            duration: 2000,
+            style: {
+                background: "linear-gradient(to right, #89A61F, #458549)",
+            }
+            }).showToast();
         //restar cantidad
         let btnRestar = document.getElementById(`btnRestar${productoAgregar.id}`)
         btnRestar.addEventListener('click', () => {
