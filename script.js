@@ -108,7 +108,7 @@ function agregarAlCarrito(id) {
             `<p id="cantidad${productoEnCarrito.id}">Cantidad: ${productoEnCarrito.cantidad}</p>`
             Toastify({
                 text: "Producto agregado al carrito",
-                duration: 2000,
+                duration: 1000,
                 style: {
                     background: "linear-gradient(to right, #89A61F, #458549)",
                 }
@@ -116,7 +116,7 @@ function agregarAlCarrito(id) {
         } else {
             Toastify({
                 text: "Producto sin stock",
-                duration: 3000,
+                duration: 1000,
                 style: {
                     background: "linear-gradient(to right, #FCA014, #F2B013)",
                   }
@@ -143,7 +143,7 @@ function agregarAlCarrito(id) {
         divCarritoDeCompras.appendChild(div)
         Toastify({
             text: "Producto agregado al carrito",
-            duration: 2000,
+            duration: 1000,
             style: {
                 background: "linear-gradient(to right, #89A61F, #458549)",
             }

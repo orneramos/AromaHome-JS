@@ -2,6 +2,68 @@ body {
     font-family: 'Dosis', sans-serif
 }
 
+.navbar {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-light .navbar-brand {
+    color: #f7762c;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: auto 2rem;
+}
+
+.portada {
+    display: grid;
+    grid-template-areas: "logo" "descripcion";
+    background-image: url("../img/portada.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    margin-bottom: 5rem; 
+}
+
+.portada-logo {
+    width: 300px;
+    text-align: center;
+    margin: 13rem auto 0 auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255);
+    border-radius: 5px;
+    height: max-content;
+    grid-area: "logo";
+}
+
+.cursiva {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    margin: 1rem;
+    line-height: 2rem; }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.titulo {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 2rem;
+    margin-left: 5rem; 
+}
+
+.descripcion {
+    display: none;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255);
+    border-radius: 5px;
+    height: max-content; 
+    grid-area: "descripcion";
+}
+
 .productos-container {
       display: flex;
       flex-flow: row wrap; 
@@ -53,45 +115,6 @@ a:hover {
     color: white;
 }
 
-.portada {
-    display: grid;
-    grid-template-areas: "logo" "descripcion";
-    background-image: url("../img/portada.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-    margin-bottom: 5rem; 
-}
-
-.portada-logo {
-    width: 300px;
-    text-align: center;
-    margin: 13rem auto 0 auto;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255);
-    border-radius: 5px;
-    height: max-content;
-    grid-area: "logo";
-}
-
-.cursiva {
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    margin: 1rem;
-    line-height: 2rem; }
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.descripcion {
-    display: none;
-    width: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255);
-    border-radius: 5px;
-    height: max-content; 
-    grid-area: "descripcion";
+.mensaje {
+    margin-top: 6rem;
 }
