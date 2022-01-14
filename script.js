@@ -88,6 +88,7 @@ function checkLocalStorage() {
                 document.querySelector(`.productoEnCarrito${productoAgregar.id}`).remove()
                 carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id)    
                 actualizarCarrito()
+                habilitarCompra()
             })
         });
         actualizarCarrito()
@@ -110,7 +111,7 @@ function agregarAlCarrito(id) {
                 text: "Producto agregado al carrito",
                 duration: 1000,
                 style: {
-                    background: "linear-gradient(to right, #89A61F, #458549)",
+                    background: "linear-gradient(to right, #2A5908, #4BA821)",
                 }
                 }).showToast();
         } else {
@@ -118,7 +119,7 @@ function agregarAlCarrito(id) {
                 text: "Producto sin stock",
                 duration: 1000,
                 style: {
-                    background: "linear-gradient(to right, #FCA014, #F2B013)",
+                    background: "linear-gradient(to right, #F28627, #F58E46)",
                   }
                 }).showToast();
         } 
@@ -145,7 +146,7 @@ function agregarAlCarrito(id) {
             text: "Producto agregado al carrito",
             duration: 1000,
             style: {
-                background: "linear-gradient(to right, #89A61F, #458549)",
+                background: "linear-gradient(to right,  #2A5908, #4BA821)",
             }
             }).showToast();
         //restar cantidad
@@ -197,4 +198,4 @@ function habilitarCompra() {
     } else {
         document.getElementById("btn-comprar").disabled = false
     }
-}
+}       
