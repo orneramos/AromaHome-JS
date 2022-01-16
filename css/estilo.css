@@ -118,3 +118,7 @@ a:hover {
 .mensaje {
     margin-top: 6rem;
 }
+
+input:invalid {
+    box-shadow: 0 0 5px 1px rgb(245, 194, 165);
+}

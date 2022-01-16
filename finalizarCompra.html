@@ -46,7 +46,7 @@
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                            <div class="invalid-feedback" id="errorName">
+                            <div class="invalid-feedback" id="errorFirstName">
                             Complete su nombre
                             </div>
                         </div>
@@ -70,30 +70,24 @@
                         <div class="col-12">
                             <label for="address" class="form-label">Direccion</label>
                             <input type="text" class="form-control" id="address" placeholder="Gral. Rodriguez 1100 dto 4" required>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback" id="errorAddress">
                             Por favor complete la direccion donde quiere recibir el pedido
                             </div>
                         </div>
                         <div class="col-md-5">
                             <label for="provincia" class="form-label">Provincia</label>
                             <input type="text" class="form-control" id="provincia" required>
-                            <div class="invalid-feedback">
-                            Por favor indique una provincia valida
-                            </div>
                         </div>
                         <div class="col-md-5">
-                            <label for="ciudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="ciudad" required="">
-                            <div class="invalid-feedback">
+                            <label for="city" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="city" required="">
+                            <div class="invalid-feedback" id="errorCity">
                             Por favor indique una ciudad valida
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label for="zip" class="form-label">Codigo Postal</label>
                             <input type="text" class="form-control" id="zip" required>
-                            <div class="invalid-feedback">
-                            Codigo postal requerido
-                            </div>
                         </div>
                     </div>
 
@@ -115,28 +109,25 @@
                             <label for="cc-name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="cc-name" placeholder="" required>
                             <small class="text-muted">Complete su nombre tal como aparece en la tarjeta</small>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback" id="errorNombreTarjeta">
                             Nombre de la tarjeta es requerido
                             </div>
                         </div>
                         <div class="col-md-12">
                             <label for="cc-number" class="form-label">Numero de tarjeta</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                            <div class="invalid-feedback">
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required> 
+                            <div class="invalid-feedback" id="errorNumeroTarjeta">
                             Numero de la tarjeta es requerido
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="cc-expiration" class="form-label">Fecha de vencimiento</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                            <div class="invalid-feedback">
-                            Fecha de vencimiento de la tarjeta es requerido
-                            </div>
+                            <input type="date" class="form-control" id="cc-expiration" placeholder="" required>
                         </div>
                         <div class="col-md-4">
                             <label for="cc-cvv" class="form-label">Codigo de seguridad</label>
                             <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback" id="errorCodigoTarjeta">
                             Codigo de seguridad es requerido
                             </div>
                         </div>
