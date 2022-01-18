@@ -1,4 +1,4 @@
-let validateMail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+const validateMail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 let contadorCarrito = JSON.parse(localStorage.getItem('contador'))
 let carritoDeCompras = JSON.parse(localStorage.getItem('productos'))
@@ -36,30 +36,48 @@ $(() => {
 
     // formulario datos de compra y envio
     $("#formularioCompra").submit((e) => {
-        e.preventDefault() 
+        e.preventDefault()
+
         //form validation
+        let isValid = true
         let email = $("#email").val()
         
         $(".invalid-feedback").hide()
 
         if (!validateMail.test(email)) {
             $("#errorEmail").show()
-        } else if ($('#firstName').val() == '') {
+            isValid = false
+        } 
+        if ($('#firstName').val() == '') {
             $("#errorFirstName").show()
-        } else if ($('#lastName').val() == '') {
+            isValid = false
+        }
+        if ($('#lastName').val() == '') {
             $("#errorLastName").show()
-        } else if ($('#address').val() == '') {
+            isValid = false
+        } 
+        if ($('#address').val() == '') {
             $("#errorAddress").show()
-        } else if ($('#city').val() == '') {
+            isValid = false
+        } 
+        if ($('#city').val() == '') {
             $("#errorCity").show()
-        } else if ($('#cc-name').val() == '') {
+            isValid = false
+        } 
+        if ($('#cc-name').val() == '') {
             $("#errorNombreTarjeta").show()
-        } else if ($('#cc-number').val() == '') {
+            isValid = false
+        } 
+        if ($('#cc-number').val() == '') {
             $("#errorNumeroTarjeta").show()
-        } else if ($('#cc-cvv').val() == '') {
+            isValid = false
+        } 
+        if ($('#cc-cvv').val() == '') {
             $("#errorCodigoTarjeta").show()
-        } else {
-            // POST
+            isValid = false
+        } 
+        //POST
+        if (isValid) {
             $.post("https://jsonplaceholder.typicode.com/posts", JSON.stringify(carritoDeCompras), function(data, estado) {
                 if (estado) {
                 $("#mensajeConfirmacionCompra").append("<h5>Su compra se ha ejecutado correctamente, a la brevedad prepararemos su pedido para ser enviado</h5>") 
