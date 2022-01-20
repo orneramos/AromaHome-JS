@@ -26,15 +26,18 @@ function mostrarProductos(array){
                 <h5 class="card-title">${producto.tipo}</h5>
                 <p>${producto.fragancia}</p>
                 <p class="card-text">$${producto.precio}</p>
-                <button class="btn btn-light" id="boton${producto.id}">Agregar al carrito</button>
+                <button class="btn btn-light" id="boton${producto.id}" >Agregar al carrito</button>
+                <p class="card-text msjSinStock" id="mensaje${producto.id}"></p>
             </div>
         </div>
         `
         divProductos.appendChild(div)
+        soldOut(producto.id)
         // boton agregar al carrito
         let botonAgregar = document.getElementById(`boton${producto.id}`)
         botonAgregar.addEventListener('click', () => {
             agregarAlCarrito(producto.id)
+            soldOut(producto.id)
         })
     });
 } 
@@ -70,6 +73,7 @@ function checkLocalStorage() {
                     document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                     `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                     actualizarCarrito()
+                    soldOut(productoAgregar.id)
                 }
             })
             //sumar cantidad
@@ -80,15 +84,18 @@ function checkLocalStorage() {
                     document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                     `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                     actualizarCarrito()
+                    soldOut(productoAgregar.id)
                 }
             })
             //eliminar producto del carrito
             let botonEliminar = document.getElementById(`btnEliminar${productoAgregar.id}`)
             botonEliminar.addEventListener('click', () => {
                 document.querySelector(`.productoEnCarrito${productoAgregar.id}`).remove()
-                carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id)    
+                productoAgregar.cantidad = 1  
+                carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id) 
                 actualizarCarrito()
                 habilitarCompra()
+                soldOut(productoAgregar.id)
             })
         });
         actualizarCarrito()
@@ -114,7 +121,8 @@ function agregarAlCarrito(id) {
                     background: "linear-gradient(to right, #2A5908, #4BA821)",
                 }
                 }).showToast();
-        } else {
+        }
+        else {
             Toastify({
                 text: "Producto sin stock",
                 duration: 1000,
@@ -157,6 +165,7 @@ function agregarAlCarrito(id) {
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
+                soldOut(productoAgregar.id)
             }
         })
         //sumar cantidad
@@ -167,15 +176,18 @@ function agregarAlCarrito(id) {
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
+                soldOut(productoAgregar.id)
             }
         })
         // eliminar producto del carrito
         let botonEliminar = document.getElementById(`btnEliminar${productoAgregar.id}`)
         botonEliminar.addEventListener('click', () => {
             document.querySelector(`.productoEnCarrito${productoAgregar.id}`).remove()
-            carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id)    
+            productoAgregar.cantidad = 1
+            carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id) 
             actualizarCarrito()
             habilitarCompra()
+            soldOut(productoAgregar.id)
         })
     }
     actualizarCarrito()
@@ -199,3 +211,27 @@ function habilitarCompra() {
         document.getElementById("btn-comprar").disabled = false
     }
 }       
+
+function soldOut(id) {
+    let productoEnCarrito = carritoDeCompras.find(producto => producto.id == id)
+    let productoEnStock = productosEnStock.find(producto => producto.id == id)
+    let card = document.getElementById(`card${id}`)
+    let mensajeSinStock = document.getElementById(`mensaje${id}`)
+    if ((!productoEnCarrito && productoEnStock.stock > 0) || (productoEnCarrito && productoEnCarrito.cantidad < productoEnStock.stock)) {
+        document.getElementById(`boton${id}`).disabled = false 
+        card.classList.remove("sinStock") 
+        mensajeSinStock.textContent = ""   
+    } else {
+        document.getElementById(`boton${id}`).disabled = true
+        card.classList.add("sinStock")
+        mensajeSinStock.textContent = "Sin stock"
+    }
+    
+    // if (!productoEnCarrito && productoEnStock.stock > 0) {
+    //     document.getElementById(`boton${id}`).disabled = false 
+    // } else if (productoEnCarrito && productoEnCarrito.cantidad < productoEnStock.stock) {
+    //     document.getElementById(`boton${id}`).disabled = false 
+    // } else {
+    //     document.getElementById(`boton${id}`).disabled = true
+    // } 
+}

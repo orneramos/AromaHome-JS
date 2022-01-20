@@ -122,3 +122,12 @@ a:hover {
 input:invalid {
     box-shadow: 0 0 5px 1px rgb(245, 194, 165);
 }
+
+.msjSinStock {
+    color: #ec4613;
+    text-align: right;
+}
+
+.sinStock {
+    opacity: 0.5;
+}
