@@ -226,12 +226,4 @@ function soldOut(id) {
         card.classList.add("sinStock")
         mensajeSinStock.textContent = "Sin stock"
     }
-    
-    // if (!productoEnCarrito && productoEnStock.stock > 0) {
-    //     document.getElementById(`boton${id}`).disabled = false 
-    // } else if (productoEnCarrito && productoEnCarrito.cantidad < productoEnStock.stock) {
-    //     document.getElementById(`boton${id}`).disabled = false 
-    // } else {
-    //     document.getElementById(`boton${id}`).disabled = true
-    // } 
 }
