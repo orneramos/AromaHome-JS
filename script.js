@@ -32,12 +32,12 @@ function mostrarProductos(array){
         </div>
         `
         divProductos.appendChild(div)
-        soldOut(producto.id)
+        habilitarDeshabilitarBtnAgregar(producto.id)
         // boton agregar al carrito
         let botonAgregar = document.getElementById(`boton${producto.id}`)
         botonAgregar.addEventListener('click', () => {
             agregarAlCarrito(producto.id)
-            soldOut(producto.id)
+            habilitarDeshabilitarBtnAgregar(producto.id)
         })
     });
 } 
@@ -73,7 +73,7 @@ function checkLocalStorage() {
                     document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                     `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                     actualizarCarrito()
-                    soldOut(productoAgregar.id)
+                    habilitarDeshabilitarBtnAgregar(productoAgregar.id)
                 }
             })
             //sumar cantidad
@@ -84,7 +84,7 @@ function checkLocalStorage() {
                     document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                     `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                     actualizarCarrito()
-                    soldOut(productoAgregar.id)
+                    habilitarDeshabilitarBtnAgregar(productoAgregar.id)
                 }
             })
             //eliminar producto del carrito
@@ -94,15 +94,15 @@ function checkLocalStorage() {
                 productoAgregar.cantidad = 1  
                 carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id) 
                 actualizarCarrito()
-                habilitarCompra()
-                soldOut(productoAgregar.id)
+                habilitarDeshabilitarBtnCompra()
+                habilitarDeshabilitarBtnAgregar(productoAgregar.id)
             })
         });
         actualizarCarrito()
     } else {
         carritoDeCompras = []
     }
-    habilitarCompra()
+    habilitarDeshabilitarBtnCompra()
 }
 
 //agregar productos al carrito teniendo en cuenta si ya estaban. si es asi, unicamente sumar cantidad sino agregar todo el producto
@@ -165,7 +165,7 @@ function agregarAlCarrito(id) {
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
-                soldOut(productoAgregar.id)
+                habilitarDeshabilitarBtnAgregar(productoAgregar.id)
             }
         })
         //sumar cantidad
@@ -176,7 +176,7 @@ function agregarAlCarrito(id) {
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = 
                 `<p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
-                soldOut(productoAgregar.id)
+                habilitarDeshabilitarBtnAgregar(productoAgregar.id)
             }
         })
         // eliminar producto del carrito
@@ -186,12 +186,12 @@ function agregarAlCarrito(id) {
             productoAgregar.cantidad = 1
             carritoDeCompras = carritoDeCompras.filter(element => element.id != productoAgregar.id) 
             actualizarCarrito()
-            habilitarCompra()
-            soldOut(productoAgregar.id)
+            habilitarDeshabilitarBtnCompra()
+            habilitarDeshabilitarBtnAgregar(productoAgregar.id)
         })
     }
     actualizarCarrito()
-    habilitarCompra()
+    habilitarDeshabilitarBtnCompra()
 }
 
 //actualizar cantidad de unidades en el carrito, precio total y actualizar localStorage
@@ -203,8 +203,8 @@ function actualizarCarrito() {
     localStorage.setItem('total', JSON.stringify(precioTotal.innerHTML))
 } 
 
-//habilitar o desabilitar la opcion de comprar (btn-compra del carrito) segun si hay productos o no en el carrito
-function habilitarCompra() {
+//habilitar o deshabilitar la opcion de comprar (btn-compra del carrito) segun si hay productos o no en el carrito
+function habilitarDeshabilitarBtnCompra() {
     if (carritoDeCompras.length == 0) {
         document.getElementById("btn-comprar").disabled = true
     } else {
@@ -212,7 +212,7 @@ function habilitarCompra() {
     }
 }       
 
-function soldOut(id) {
+function habilitarDeshabilitarBtnAgregar(id) {
     let productoEnCarrito = carritoDeCompras.find(producto => producto.id == id)
     let productoEnStock = productosEnStock.find(producto => producto.id == id)
     let card = document.getElementById(`card${id}`)
