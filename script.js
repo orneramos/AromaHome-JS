@@ -122,15 +122,6 @@ function agregarAlCarrito(id) {
                 }
                 }).showToast();
         }
-        else {
-            Toastify({
-                text: "Producto sin stock",
-                duration: 1000,
-                style: {
-                    background: "linear-gradient(to right, #F28627, #F58E46)",
-                  }
-                }).showToast();
-        } 
     } else {
         let productoAgregar = productosEnStock.find(producto => producto.id == id)
         carritoDeCompras.push(productoAgregar)
