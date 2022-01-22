@@ -105,7 +105,7 @@ function checkLocalStorage() {
     habilitarDeshabilitarBtnCompra()
 }
 
-//agregar productos al carrito teniendo en cuenta si ya estaban. si es asi, unicamente sumar cantidad sino agregar todo el producto
+//agregar productos al carrito teniendo en cuenta si ya estaban. si es asi, unicamente sumar cantidad sino crear el producto
 function agregarAlCarrito(id) {
     //agregar productos al carrito
     let productoEnCarrito = carritoDeCompras.find(producto => producto.id == id)
@@ -203,6 +203,7 @@ function habilitarDeshabilitarBtnCompra() {
     }
 }       
 
+//habilitar o desabilitar el boton de las cards para agregar productos al carrito segun stock del producto
 function habilitarDeshabilitarBtnAgregar(id) {
     let productoEnCarrito = carritoDeCompras.find(producto => producto.id == id)
     let productoEnStock = productosEnStock.find(producto => producto.id == id)
